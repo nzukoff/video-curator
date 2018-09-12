@@ -1,0 +1,34 @@
+{
+  "name": "video-curator-front",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "react-scripts": "0.9.5"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "chai": "^3.5.0",
+    "enzyme": "^2.9.1",
+    "moment": "^2.18.1",
+    "nock": "^9.0.22",
+    "react": "^15.6.2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-async-await": "^1.0.1",
+    "redux-promise-middleware": "^4.2.0",
+    "redux-thunk": "^2.2.0",
+    "sinon": "^2.4.1"
+  },
+  "scripts": {
+    "start": "PORT=3006 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

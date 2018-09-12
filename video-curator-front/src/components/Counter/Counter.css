@@ -1,0 +1,22 @@
+.counter{
+  display:inline-block;
+  margin-top: 20px;
+  padding: 10px;
+}
+.btn:focus {
+  outline: none;
+}
+.glyphicon {
+  color: #2A3438;
+}
+.counter {
+  color: #2A3438;
+  font-size: large;
+}
+.glyphicon-trash {
+  padding-top:4px;
+}
+
+.votes {
+  padding-left: 3px;
+}

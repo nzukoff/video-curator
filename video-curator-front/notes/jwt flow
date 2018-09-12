@@ -1,0 +1,161 @@
+LOGIN:
+
+JWTLOGINFILTER ATTEMPT AUTHENTICATION
+AUTH DTO SET USERNAME
+AUTH DTO SET PASSWORD
+AUTH DTO GET USERNAME
+AUTH DTO GET PASSWORD
+USERSERVICE LOAD USER BY USERNAME
+Hibernate: select user0_.id as id1_3_, user0_.created as created2_3_, user0_.enabled as enabled3_3_, user0_.modified as modified4_3_, user0_.password as password5_3_, user0_.username as username6_3_, user0_.version as version7_3_ from users user0_ where user0_.username=?
+USER DEFAULT CONSTRUCTOR
+USER SET ID
+USER SET ENABLED
+USER SET PASSWORD
+USER SET ROLES
+USER SET USERNAME
+Hibernate: select roles0_.user_id as user_id1_2_0_, roles0_.role_id as role_id2_2_0_, role1_.id as id1_1_1_, role1_.created as created2_1_1_, role1_.modified as modified3_1_1_, role1_.role as role4_1_1_, role1_.version as version5_1_1_ from roles_users roles0_ inner join roles role1_ on roles0_.role_id=role1_.id where roles0_.user_id=?
+USER IS ACCOUNT NON LOCKED
+USER IS ENABLED
+USER IS ENABLED
+USER IS ACCOUNT NON EXPIRED
+USER IS ENABLED
+USER GET PASSWORD
+USER IS CREDENTIALS NON EXPIRED
+USER IS ENABLED
+USER GET AUTHORITIES
+USER GET ROLES
+USER GET USERNAME
+JWTLOGINFILTER SUCCESSFUL AUTHENTICATION
+USER GET USERNAME
+USERSERVICE LOAD USER BY USERNAME
+Hibernate: select user0_.id as id1_3_, user0_.created as created2_3_, user0_.enabled as enabled3_3_, user0_.modified as modified4_3_, user0_.password as password5_3_, user0_.username as username6_3_, user0_.version as version7_3_ from users user0_ where user0_.username=?
+USER DEFAULT CONSTRUCTOR
+USER SET ID
+USER SET ENABLED
+USER SET PASSWORD
+USER SET ROLES
+USER SET USERNAME
+Hibernate: select roles0_.user_id as user_id1_2_0_, roles0_.role_id as role_id2_2_0_, role1_.id as id1_1_1_, role1_.created as created2_1_1_, role1_.modified as modified3_1_1_, role1_.role as role4_1_1_, role1_.version as version5_1_1_ from roles_users roles0_ inner join roles role1_ on roles0_.role_id=role1_.id where roles0_.user_id=?
+JWTUTIL GENERATE TOKEN
+USER GET USERNAME
+USER GET ID
+USER GET ROLES
+DATEUTIL TO JAVA DATE
+JWTUTIL TOKEN FROM STRING JWT
+JWTAUTHENTICATIONFILTER DO FILTER
+JWTUTIL TOKEN FROM STRING JWT
+JWTTOKEN IS AUTHENTICATED
+JWTTOKEN GET PRINCIPAL
+JWTTOKEN GET NAME
+JWTTOKEN GET PRINCIPAL
+JWTTOKEN GET PRINCIPAL
+JWTTOKEN GET PRINCIPAL
+JWTAUTHENTICATIONFILTER DO FILTER
+JWTUTIL TOKEN FROM STRING JWT
+JWTTOKEN GET PRINCIPAL
+USER CONTROLLER CREDENTIALS
+JWTTOKEN GET USER ID
+USERSERVICE FIND USER BY ID
+Hibernate: select user0_.id as id1_3_0_, user0_.created as created2_3_0_, user0_.enabled as enabled3_3_0_, user0_.modified as modified4_3_0_, user0_.password as password5_3_0_, user0_.username as username6_3_0_, user0_.version as version7_3_0_, roles1_.user_id as user_id1_2_1_, role2_.id as role_id2_2_1_, role2_.id as id1_1_2_, role2_.created as created2_1_2_, role2_.modified as modified3_1_2_, role2_.role as role4_1_2_, role2_.version as version5_1_2_ from users user0_ left outer join roles_users roles1_ on user0_.id=roles1_.user_id left outer join roles role2_ on roles1_.role_id=role2_.id where user0_.id=?
+USER DEFAULT CONSTRUCTOR
+USER SET ID
+USER SET ENABLED
+USER SET PASSWORD
+USER SET ROLES
+USER SET USERNAME
+USER GET ROLES
+USER GET USERNAME
+USER DTO GET USERNAME
+USER DTO GET ROLES
+JWTTOKEN GET PRINCIPAL
+JWTTOKEN GET NAME
+
+
+
+SIGN UP:
+
+JWTAUTHENTICATIONFILTER DO FILTER
+JWTAUTHENTICATIONFILTER NULL HEADER
+JWTAUTHENTICATIONFILTER DO FILTER
+JWTAUTHENTICATIONFILTER NULL HEADER
+AUTH DTO SET USERNAME
+AUTH DTO SET PASSWORD
+USER CONTROLLER INDEX
+AUTH DTO GET USERNAME
+USERSERVICE LOAD USER BY USERNAME
+Hibernate: select user0_.id as id1_3_, user0_.created as created2_3_, user0_.enabled as enabled3_3_, user0_.modified as modified4_3_, user0_.password as password5_3_, user0_.username as username6_3_, user0_.version as version7_3_ from users user0_ where user0_.username=?
+USER DEFAULT CONSTRUCTOR
+USER SET ENABLED
+AUTH DTO GET USERNAME
+USER SET USERNAME
+AUTH DTO GET PASSWORD
+USER SET PASSWORD
+USER SET ROLES
+Hibernate: select role0_.id as id1_1_, role0_.created as created2_1_, role0_.modified as modified3_1_, role0_.role as role4_1_, role0_.version as version5_1_ from roles role0_ where role0_.role=?
+USER GET ROLES
+USERSERVICE SAVE USER
+USER GET ID
+USER GET ID
+USER GET ROLES
+USER IS ENABLED
+USER GET PASSWORD
+USER GET ROLES
+USER GET USERNAME
+USER SET ENABLED
+USER SET PASSWORD
+USER SET ROLES
+USER SET USERNAME
+USER GET USERNAME
+USER GET USERNAME
+Hibernate: insert into users (created, enabled, modified, password, username, version) values (?, ?, ?, ?, ?, ?)
+USER SET ID
+USER GET ROLES
+USER GET ROLES
+USER GET ID
+USER IS ENABLED
+USER GET PASSWORD
+USER GET ROLES
+USER GET USERNAME
+Hibernate: insert into roles_users (user_id, role_id) values (?, ?)
+
+
+UPVOTE:
+
+JWTAUTHENTICATIONFILTER DO FILTER
+JWTUTIL TOKEN FROM STRING JWT
+JWTTOKEN IS AUTHENTICATED
+JWTTOKEN GET PRINCIPAL
+JWTTOKEN GET NAME
+JWTTOKEN GET PRINCIPAL
+JWTTOKEN GET PRINCIPAL
+JWTTOKEN GET PRINCIPAL
+JWTAUTHENTICATIONFILTER DO FILTER
+JWTUTIL TOKEN FROM STRING JWT
+Hibernate: select video0_.id as id1_4_0_, video0_.created as created2_4_0_, video0_.link as link3_4_0_, video0_.modified as modified4_4_0_, video0_.title as title5_4_0_, video0_.user_id as user_id8_4_0_, video0_.version as version6_4_0_, video0_.votes as votes7_4_0_, user1_.id as id1_3_1_, user1_.created as created2_3_1_, user1_.enabled as enabled3_3_1_, user1_.modified as modified4_3_1_, user1_.password as password5_3_1_, user1_.username as username6_3_1_, user1_.version as version7_3_1_, roles2_.user_id as user_id1_2_2_, role3_.id as role_id2_2_2_, role3_.id as id1_1_3_, role3_.created as created2_1_3_, role3_.modified as modified3_1_3_, role3_.role as role4_1_3_, role3_.version as version5_1_3_ from videos video0_ left outer join users user1_ on video0_.user_id=user1_.id left outer join roles_users roles2_ on user1_.id=roles2_.user_id left outer join roles role3_ on roles2_.role_id=role3_.id where video0_.id=?
+USER DEFAULT CONSTRUCTOR
+USER SET ID
+USER SET ENABLED
+USER SET PASSWORD
+USER SET ROLES
+USER SET USERNAME
+USER GET ROLES
+USER GET ID
+USER IS ENABLED
+USER GET PASSWORD
+USER GET ROLES
+USER GET USERNAME
+Hibernate: update videos set created=?, link=?, modified=?, title=?, user_id=?, version=?, votes=? where id=? and version=?
+USER GET ID
+USER GET USERNAME
+USER IS ENABLED
+USER GET ROLES
+USER GET AUTHORITIES
+USER GET ROLES
+USER IS ACCOUNT NON EXPIRED
+USER IS ENABLED
+USER IS ACCOUNT NON LOCKED
+USER IS ENABLED
+USER IS CREDENTIALS NON EXPIRED
+USER IS ENABLED
+JWTTOKEN GET PRINCIPAL
+JWTTOKEN GET NAME
