@@ -58,7 +58,7 @@ public class UserService implements UserDetailsService {
 
     public User findUserById(int id) {
         System.out.println("USERSERVICE FIND USER BY ID");
-        return this.userRepository.findOne(id);
+        return this.userRepository.findOneById(id);
     }
 
     public User findUserByUsername(String username) {
@@ -67,7 +67,7 @@ public class UserService implements UserDetailsService {
     }
 
     public void deleteUserById(int id) {
-        this.userRepository.delete(id);
+        this.userRepository.deleteById(id);
     }
 
 //    public Optional<User> getByUsername(String username) {

@@ -45,41 +45,41 @@ public class VideoService {
     }
 
     public Video findVideoById(int id) {
-        return this.videoRepository.findOne(id);
+        return this.videoRepository.findOneById(id);
     }
 
     public Iterable<Video> findAllVideos() { return this.videoRepository.findAll(); }
 
     public void deleteVideo(int id) {
-        this.videoRepository.delete(id);
+        this.videoRepository.deleteById(id);
     }
 
     public Video increaseVotes(int id) {
-        Video video = this.videoRepository.findOne(id);
+        Video video = this.videoRepository.findOneById(id);
         int votes = video.getVotes();
         video.setVotes(votes+1);
         return this.videoRepository.save(video);
     }
 
     public Video decreaseVotes(int id) {
-        Video video = this.videoRepository.findOne(id);
+        Video video = this.videoRepository.findOneById(id);
         int votes = video.getVotes();
         video.setVotes(votes-1);
         return this.videoRepository.save(video);
     }
 
     public Comment createComment(Comment comment, int video_id) {
-        Video video = this.videoRepository.findOne(video_id);
+        Video video = this.videoRepository.findOneById(video_id);
         comment.setVideo(video);
         comment.setVotes(1);
         return this.commentRepository.save(comment);
     }
 
-    public List<Comment> findCommentsFromVideo(int id) { return this.videoRepository.findOne(id).getComments(); }
+    public List<Comment> findCommentsFromVideo(int id) { return this.videoRepository.findOneById(id).getComments(); }
 
     public int countCommentsFromVideo(int video_id) { return this.commentRepository.countCommentsFromVideo(video_id); }
 
     public User findUserFromVideo(int id) {
-        return this.videoRepository.findOne(id).getUser();
+        return this.videoRepository.findOneById(id).getUser();
     }
 }

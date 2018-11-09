@@ -9,4 +9,6 @@ import java.util.Optional;
 
 public interface IUserRepository extends CrudRepository<User,Integer> {
     User findByUsername(String username);
+    User findOneById(int id);
+    User deleteById(int id);
 }

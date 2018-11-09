@@ -17,30 +17,30 @@ public class CommentService {
     }
 
     public Comment findCommentById(int id) {
-        return this.commentRepository.findOne(id);
+        return this.commentRepository.findOneById(id);
     }
 
-    public void deleteCommentById(int id) {
-        this.commentRepository.delete(id);
-    }
+//    public void deleteCommentById(int id) {
+//        this.commentRepository.delete(id);
+//    }
 
     public Video findVideoFromComment(int id) {
-        return this.commentRepository.findOne(id).getVideo();
+        return this.commentRepository.findOneById(id).getVideo();
     }
 
     public User findUserFromComment(int id) {
-        return this.commentRepository.findOne(id).getUser();
+        return this.commentRepository.findOneById(id).getUser();
     }
 
     public Comment increaseVotes(int id) {
-        Comment comment = this.commentRepository.findOne(id);
+        Comment comment = this.commentRepository.findOneById(id);
         int votes = comment.getVotes();
         comment.setVotes(votes+1);
         return this.commentRepository.save(comment);
     }
 
     public Comment decreaseVotes(int id) {
-        Comment comment = this.commentRepository.findOne(id);
+        Comment comment = this.commentRepository.findOneById(id);
         int votes = comment.getVotes();
         comment.setVotes(votes-1);
         return this.commentRepository.save(comment);
